@@ -1,0 +1,31 @@
+"""
+computational tools
+1.min()
+2.max()
+3.rank()
+4.corealtion()
+5.covariance()
+"""
+import pandas as p
+ds={'sno':p.Series([1,2,3,4,5,6,7,8]),
+    'student_name':p.Series(['neela','nani','sasi','anji','vamsi','roopa','kyathi','aarna']),
+     'age':p.Series([12,34,23,24,28,22,19,25]),
+     'mid1':p.Series([35,45,65,34,43,56,68,83]),
+     'mid2':p.Series([63,47,50,64,49,56,78,94])
+     }
+df=p.DataFrame(ds)
+print(df)
+df['result']=df['mid1']+df['mid2']
+print(df)
+minimum=df['result'].min()
+print("minimum=",minimum)
+maximum=df['result'].max()
+print("maximum=",maximum)
+rank=df.rank()
+print("rank",rank)
+x=df['mid1'].corr(df['mid2'])
+print(x)
+y=df['mid1'].corr(df['result'])
+print(y)
+z=df['mid2'].corr(df['result'])
+print(z)
